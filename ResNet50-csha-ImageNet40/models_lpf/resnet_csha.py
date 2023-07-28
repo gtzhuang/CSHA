@@ -27,8 +27,8 @@ class CSHA(nn.Module):
         # channel attention
         avg = self.avg_pool_global(x)
         avg = self.batch_norm_channel(avg)
-        m = avg * self.v
-        x = x * self.sigmoid(m)
+        avg = avg * self.v
+        x = x * self.sigmoid(avg)
         
         low = self.avg_pool(x)
         high = x - low
