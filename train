@@ -1,0 +1,5 @@
+# training from scratch
+python main.py --data ../path_to_data -f 3 -b 128 -ba 2 --epochs 100 --no_warmup --workers worker_num --num_classes class_num -a resnet50_csha --out-dir path_to_output
+
+# finetuned with pre-trained weights
+python main.py --data ../path_to_data -f 3 -b 128 -ba 2 --epochs 100 --no_warmup --workers worker_num --num_classes class_num -a resnet50_csha --weights model_best.pth.tar --out-dir path_to_output
